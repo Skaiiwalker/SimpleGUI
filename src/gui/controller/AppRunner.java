@@ -7,6 +7,7 @@ public class AppRunner
 	 */
 	public static void main(String[] args)
 	{
-		//GUIAppController
+		GUIAppController myGUIAppController = new GUIAppController();
+		myGUIAppController.start();
 	}
 }
