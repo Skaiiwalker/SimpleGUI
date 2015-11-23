@@ -100,13 +100,6 @@ public class GUIPanel extends JPanel
 				{
 					changeRandomColor();
 				}
-				
-				if((Math.abs(moved.getX() - firstButton.getX()) < 10) && (Math.abs(moved.getY() - firstButton.getY()) <10))
-				{
-					firstButton.setLocation((int) (Math.random() * 400), (int) (Math.random() * 400)); 
-				}
-				
-				firstTextField.setText("Mouse X: " + moved.getX() + " Mouse Y: " + moved.getY() );
 			}
 			
 			public void mouseDragged(MouseEvent moved)
