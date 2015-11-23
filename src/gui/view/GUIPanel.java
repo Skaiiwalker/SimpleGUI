@@ -27,6 +27,7 @@ public class GUIPanel extends JPanel
 		firstButton = new JButton("Please do not click the button");
 		firstTextField = new JTextField("words can be typed here");
 		
+		
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -46,6 +47,7 @@ public class GUIPanel extends JPanel
 	
 	private void setupLayout()
 	{
+		baseLayout.putConstraint(SpringLayout.WEST, firstTextField, 24, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 107, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, firstButton, -32, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, firstTextField, 37, SpringLayout.NORTH, this);
@@ -85,6 +87,29 @@ public class GUIPanel extends JPanel
 			}
 			
 			public void mouseExited(MouseEvent click)
+			{
+				
+			}
+		});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseMoved(MouseEvent moved)
+			{
+				if(moved.isAltDown())
+				{
+					changeRandomColor();
+				}
+				
+				if((Math.abs(moved.getX() - firstButton.getX()) < 10) && (Math.abs(moved.getY() - firstButton.getY()) <10))
+				{
+					firstButton.setLocation((int) (Math.random() * 400), (int) (Math.random() * 400)); 
+				}
+				
+				firstTextField.setText("Mouse X: " + moved.getX() + " Mouse Y: " + moved.getY() );
+			}
+			
+			public void mouseDragged(MouseEvent moved)
 			{
 				
 			}
