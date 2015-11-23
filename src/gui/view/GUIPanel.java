@@ -66,7 +66,7 @@ public class GUIPanel extends JPanel
 		{
 			public void mouseClicked(MouseEvent click)
 			{
-				
+				changeRandomColor();
 			}
 			
 			public void mouseReleased(MouseEvent click)
@@ -89,6 +89,16 @@ public class GUIPanel extends JPanel
 				
 			}
 		});
+	}
+	
+	private void changeRandomColor()
+	{
+		int red, green, blue;
+		red = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
 	}
 	
 }
